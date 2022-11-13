@@ -5,10 +5,10 @@ def table_end():
 	return "\n\n</table>"
 
 def row_start():
-	return "\n<tr>\n"    #<<<naprawic funkcji!
+	return "<tr>\n"    #<<<naprawic funkcji!
 
 def row_end():
-	return "</tr>"
+	return "</tr>\n"
 
 def coloumn_start():
 	return " <td>"
@@ -26,7 +26,7 @@ with open("CSVtest.csv") as plik:
 
 		for coloumn in linia.split(","):
 			tekst_do_zapisania += coloumn_start()
-			tekst_do_zapisania += coloumn
+			tekst_do_zapisania += coloumn.rstrip()
 			tekst_do_zapisania += coloumn_end()
 		
 		tekst_do_zapisania += row_end()
